@@ -1,5 +1,6 @@
 # POI zomato data pipeline (steps 1–10)
-/new_steps
+`/new_steps`
+
 This folder contains sequential Python scripts that build a single enriched restaurant / POI dataset for Brown‑Forman analytics. Paths are **hard‑coded** under `brown_forman_req/new_input/` (inputs) and `brown_forman_req/new_output/` (intermediate and final CSVs).
 
 Run steps **in order** unless you are restarting from a saved artifact.
