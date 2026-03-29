@@ -1,0 +1,277 @@
+====================================================================================================
+RESTAURANT CLASSIFIER V10-CLEAN  |  NO SHERLOCK / ST  |  BLIND TEST SPLIT
+====================================================================================================
+Dropped leakage column: 'Category - Sherlock'
+Dropped leakage column: 'ST'
+
+Full labeled: 421 | Unlabeled: 3902
+Distribution: {'Mainstream': 210, 'Premium': 146, 'Super Premium': 65}
+
+Train: 336 | Test (blind): 85
+Train dist: {'Mainstream': 168, 'Premium': 116, 'Super Premium': 52}
+Test  dist: {'Mainstream': 42, 'Premium': 30, 'Super Premium': 13}
+
+⚠  Test set LOCKED — not touched until final evaluation.
+
+────────────────────────────────────────────────────────────
+LABEL CORRECTIONS
+────────────────────────────────────────────────────────────
+  Fix 1 (suburban low-price Premium → Mainstream):         3
+  Fix 2 (premium-area high-price Mainstream → Premium):    4
+  Fix 3 (5-star hotel high-price Premium → Super Prem):    4
+  ─────────────────────────────────────────────────────
+  Total corrections:                                      11
+
+  Post-correction distribution:
+    Mainstream          : 167
+    Premium             : 113
+    Super Premium       : 56
+────────────────────────────────────────────────────────────
+
+Correction log → /mnt/data/image_recognition/brown_forman_req/puru_output/0327_label_corrected.csv  (11 rows)
+
+Engineering train set...
+  NLP extraction...
+Engineering test set...
+  NLP extraction...
+Engineering unlabeled set...
+  NLP extraction...
+Orignal Features: 129
+Features after reduction: 93
+
+Features: 91 | Train samples: 336
+Labels  : {'Mainstream': 167, 'Premium': 113, 'Super Premium': 56}
+
+══════════════════════════════════════════════════════════════════════
+CORRELATION ANALYSIS — Spearman ρ vs. Target (ordinal)
+══════════════════════════════════════════════════════════════════════
+  n=336 train samples  |  reliable threshold: |ρ| ≥ 0.2
+
+    #  Feature                                             ρ        p  Reliable
+  ────────────────────────────────────────────────────────────────────────
+    1  cost_food                                     +0.7479   0.0000  ✓ **
+    2  sb_price                                      +0.7319   0.0000  ✓ **
+    3  segment_score                                 +0.6617   0.0000  ✓ **
+    4  domain_score_clean                            +0.6530   0.0000  ✓ **
+    5  cost_both                                     +0.6431   0.0000  ✓ **
+    6  log_cost                                      +0.6431   0.0000  ✓ **
+    7  upscale_x_price                               +0.5876   0.0000  ✓ **
+    8  score                                         +0.5758   0.0000  ✓ **
+    9  rating_x_upscale                              +0.5578   0.0000  ✓ **
+   10  luxury_x_price                                +0.5420   0.0000  ✓ **
+   11  is_high_price                                 +0.5326   0.0000  ✓ **
+   12  premium_place_x_price                         +0.5180   0.0000  ✓ **
+   13  ratings                                       +0.5151   0.0000  ✓ **
+   14  parking__has_parking_valet                    +0.4886   0.0000  ✓ **
+   15  is_low_price                                  -0.4856   0.0000  ✓ **
+   16  dining_price_num                              +0.4790   0.0000  ✓ **
+   17  luxury_words                                  +0.4726   0.0000  ✓ **
+   18  premium_place                                 +0.4456   0.0000  ✓ **
+   19  sb_rating                                     +0.4288   0.0000  ✓ **
+   20  is_very_high_price                            +0.4250   0.0000  ✓ **
+   21  cost_drinks                                   +0.4161   0.0000  ✓ **
+   22  wine_item_price_avg                           +0.4155   0.0000  ✓ **
+   23  chef_x_price                                  +0.4134   0.0000  ✓ **
+   24  positive_ratio                                +0.4105   0.0000  ✓ **
+   25  experience_words                              +0.4012   0.0000  ✓ **
+   26  chef_x_5star                                  +0.3646   0.0000  ✓ **
+   27  other_cocktails_item_price_avg                +0.3645   0.0000  ✓ **
+   28  avg_service_aspect                            +0.3622   0.0000  ✓ **
+   29  chef_mentions                                 +0.3604   0.0000  ✓ **
+   30  avg_atmosphere_aspect                         +0.3561   0.0000  ✓ **
+
+  Reliable features (|ρ| ≥ 0.2): 59 / 91
+  CSV saved  → /mnt/data/image_recognition/brown_forman_req/puru_output/correlation_analysis.csv
+  Plot saved → /mnt/data/image_recognition/brown_forman_req/puru_output/correlation_plot.png
+
+══════════════════════════════════════════════════════════════════════
+DISTRIBUTION ANALYSIS — Labeled vs. Unlabeled (Covariate Shift)
+══════════════════════════════════════════════════════════════════════
+  Labeled: 336 | Unlabeled: 3902
+  KS shift flag threshold: 0.2
+
+  Features with KS > 0.2: 35 / 91
+
+  Feature                                          KS        p     Lab μ   Unlab μ      Δ%  Flag
+  ─────────────────────────────────────────────────────────────────────────────────────────────
+  score                                         0.458   0.0000     0.496     0.320   35.4%  ⚠ SHIFT
+  segment_score                                 0.453   0.0000    10.289     4.949   51.9%  ⚠ SHIFT
+  domain_score_clean                            0.449   0.0000     4.417    -1.557  135.3%  ⚠ SHIFT
+  cost_both                                     0.448   0.0000  3457.142  1351.800   60.9%  ⚠ SHIFT
+  log_cost                                      0.448   0.0000     7.702     5.961   22.6%  ⚠ SHIFT
+  is_low_price                                  0.436   0.0000     0.292     0.727  149.4%  ⚠ SHIFT
+  sb_price                                      0.424   0.0000     3.399     1.341   60.5%  ⚠ SHIFT
+  atmosphere__feels_cozy                        0.423   0.0000     0.771     0.348   54.9%  ⚠ SHIFT
+  upscale_x_price                               0.408   0.0000  2479.581   510.775   79.4%  ⚠ SHIFT
+  rating_x_upscale                              0.390   0.0000     2.554     0.870   65.9%  ⚠ SHIFT
+  experience_words                              0.369   0.0000     8.571     4.629   46.0%  ⚠ SHIFT
+  atmosphere__feels_hip                         0.366   0.0000     0.863     0.497   42.4%  ⚠ SHIFT
+  is_very_low_price                             0.364   0.0000     0.089     0.453  407.2%  ⚠ SHIFT
+  amenities__has_bar_onsite                     0.336   0.0000     0.711     0.375   47.2%  ⚠ SHIFT
+  cost_food                                     0.335   0.0000  2267.113  1280.920   43.5%  ⚠ SHIFT
+  offerings__serves_wine                        0.334   0.0000     0.970     0.637   34.4%  ⚠ SHIFT
+  planning__accepts_reservations                0.315   0.0000     0.946     0.631   33.3%  ⚠ SHIFT
+  parking__has_parking_valet                    0.308   0.0000     0.461     0.153   66.8%  ⚠ SHIFT
+  reviews_count                                 0.304   0.0000  1706.015   916.919   46.3%  ⚠ SHIFT
+  avg_review_length                             0.299   0.0000   361.204   243.947   32.5%  ⚠ SHIFT
+  premium_place_x_price                         0.290   0.0000  1830.658   361.271   80.3%  ⚠ SHIFT
+  social_proof_score                            0.287   0.0000     8.622     5.247   39.1%  ⚠ SHIFT
+  luxury_x_price                                0.286   0.0000  6530.971  1548.220   76.3%  ⚠ SHIFT
+  max_drink_price_avg                           0.285   0.0000  2151.533  3206.144   49.0%  ⚠ SHIFT
+  drink_category_count                          0.280   0.0000     2.851     0.787   72.4%  ⚠ SHIFT
+
+  ──────────────────────────────────────────────────────────────────────
+  PER-CLASS MEANS — Top 15 features by KS
+  ──────────────────────────────────────────────────────────────────────
+  Feature                                    Mainstream    Premium  SuperPrem  Unlabeled
+  ──────────────────────────────────────────────────────────────────────────────
+  score                                           0.416      0.553      0.620      0.320
+  segment_score                                   6.826     12.345     16.464      4.949
+  domain_score_clean                              0.299      6.637     12.214     -1.557
+  cost_both                                    1900.200   4022.718   6958.910   1351.800
+  log_cost                                        7.116      8.076      8.697      5.961
+  is_low_price                                    0.521      0.080      0.036      0.727
+  sb_price                                        1.844      4.106      6.607      1.341
+  atmosphere__feels_cozy                          0.635      0.894      0.929      0.348
+  upscale_x_price                               837.968   3249.923   5820.667    510.775
+  rating_x_upscale                                1.525      3.534      3.645      0.870
+  experience_words                                6.491     10.000     11.893      4.629
+  atmosphere__feels_hip                           0.766      0.965      0.946      0.497
+  is_very_low_price                               0.174      0.009      0.000      0.453
+  amenities__has_bar_onsite                       0.617      0.796      0.821      0.375
+  cost_food                                    1362.575   2502.655   4489.286   1280.920
+
+  CSV saved → /mnt/data/image_recognition/brown_forman_req/puru_output/distribution_analysis.csv
+
+====================================================================================================
+MODEL TRAINING — 5-fold CV on TRAIN set
+====================================================================================================
+
+Tuning GBM...
+  Best GBM: n=300, d=5, lr=0.03, ss=0.7 → CV 77.4%
+Tuning RF...
+  Best RF CV: 78.6%
+  Extra Trees CV: 76.2%
+Tuning k-NN...
+  Best k-NN CV: 75.0%
+Running semi-supervised...
+  Pseudo-labels (≥0.88): 3268 → {'Mainstream': 3104, 'Premium': 140, 'Super Premium': 24}
+  Semi-Supervised CV: 78.3%
+Building stacking ensemble...
+  Stacking CV: 78.0%
+  Majority Vote CV: 78.6%
+
+====================================================================================================
+CV RESULTS (TRAIN SET)
+====================================================================================================
+
+Model                         Acc │  M Pre  M Rec   M F1 │  P Pre  P Rec   P F1 │  SP Pre  SP Rec   SP F1
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+GBM (tuned)                77.4% │ 84.8% 86.8% 85.8% │ 67.5% 69.9% 68.7% │  75.0%  64.3%  69.2%
+RF (tuned)                 78.6% │ 87.7% 85.6% 86.7% │ 66.9% 75.2% 70.8% │  78.3%  64.3%  70.6% ◀ BEST
+Extra Trees                76.2% │ 87.0% 83.8% 85.4% │ 64.1% 72.6% 68.0% │  72.3%  60.7%  66.0%
+k-NN (tuned)               75.0% │ 80.1% 91.6% 85.5% │ 65.2% 64.6% 64.9% │  78.8%  46.4%  58.4%
+Semi-Supervised            78.3% │ 88.5% 82.6% 85.4% │ 66.7% 77.9% 71.8% │  77.1%  66.1%  71.2%
+Stacking                   78.0% │ 86.7% 86.2% 86.5% │ 67.5% 73.5% 70.3% │  74.5%  62.5%  68.0%
+Majority Vote              78.6% │ 86.7% 86.2% 86.5% │ 67.5% 75.2% 71.1% │  79.5%  62.5%  70.0% ◀ BEST
+
+Best CV: RF (tuned) → 78.6%
+
+====================================================================================================
+BLIND TEST EVALUATION  (n=85)
+====================================================================================================
+
+====================================================================================================
+BLIND TEST SET RESULTS
+====================================================================================================
+
+Model                         Acc │  M Pre  M Rec   M F1 │  P Pre  P Rec   P F1 │  SP Pre  SP Rec   SP F1
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+GBM (tuned)                82.4% │ 87.8% 85.7% 86.7% │ 67.9% 76.0% 71.7% │  93.8%  83.3%  88.2%
+RF (tuned)                 85.9% │ 90.2% 88.1% 89.2% │ 74.1% 80.0% 76.9% │  94.1%  88.9%  91.4% ◀ BEST
+Extra Trees                84.7% │ 89.7% 83.3% 86.4% │ 71.4% 80.0% 75.5% │  94.4%  94.4%  94.4%
+Majority Vote              85.9% │ 90.0% 85.7% 87.8% │ 74.1% 80.0% 76.9% │  94.4%  94.4%  94.4% ◀ BEST
+
+Best Test: RF (tuned) → 85.9%
+
+Confusion Matrix (test):
+               Mainstream  Premium  Super Premium
+Mainstream             37        5              0
+Premium                 4       20              1
+Super Premium           0        2             16
+               precision    recall  f1-score   support
+
+   Mainstream      0.902     0.881     0.892        42
+      Premium      0.741     0.800     0.769        25
+Super Premium      0.941     0.889     0.914        18
+
+     accuracy                          0.859        85
+    macro avg      0.861     0.857     0.858        85
+ weighted avg      0.863     0.859     0.860        85
+
+
+────────────────────────────────────────────────────────────
+OVERFITTING CHECK
+────────────────────────────────────────────────────────────
+  CV accuracy  : 78.6%
+  Test accuracy: 85.9%
+  Gap          : -7.3%  (✓  Gap is within acceptable range)
+
+────────────────────────────────────────────────────────────
+TOP 15 FEATURES (GBM, trained on full train set)
+────────────────────────────────────────────────────────────
+   1. cost_food                                     0.0700  (cum 7.0%)
+   2. luxury_x_price                                0.0484  (cum 11.8%)
+   3. score                                         0.0472  (cum 16.5%)
+   4. sb_price                                      0.0467  (cum 21.2%)
+   5. domain_score_clean                            0.0437  (cum 25.6%)
+   6. segment_score                                 0.0377  (cum 29.4%)
+   7. log_cost                                      0.0368  (cum 33.0%)
+   8. premium_place_x_price                         0.0353  (cum 36.6%)
+   9. dining_price_num                              0.0337  (cum 40.0%)
+  10. cost_both                                     0.0329  (cum 43.2%)
+  11. ratings                                       0.0263  (cum 45.9%)
+  12. upscale_x_price                               0.0260  (cum 48.5%)
+  13. social_proof_score                            0.0248  (cum 51.0%)
+  14. hotel_stars                                   0.0233  (cum 53.3%)
+  15. avg_review_length                             0.0189  (cum 55.2%)
+
+================================================================================
+SCORING ALL RESTAURANTS
+================================================================================
+
+Saved: /mnt/data/image_recognition/brown_forman_req/puru_output/0327_predictions.csv  (4323 rows)
+
+Full distribution:
+Mainstream       3625
+Premium           541
+Super Premium     157
+
+Super Premium (model-predicted): 83
+
+    #  Restaurant                                          SP Prob    Conf
+  ────────────────────────────────────────────────────────────────────────
+    1  Sahib Room & Kipling Bar                              0.997   0.997
+    2  The Brasserie                                         0.996   0.996
+    3  Fifty Five East                                       0.995   0.995
+    4  Romano's                                              0.993   0.993
+    5  Avartana- ITC Maratha                                 0.993   0.993
+    6  ARTISAN - BAR & LOUNGE                                0.992   0.992
+    7  Dum Pukht                                             0.991   0.991
+    8  Seasonal Tastes                                       0.990   0.990
+    9  Lotus Cafe                                            0.990   0.990
+   10  Papa's                                                0.982   0.982
+   11  Peshwa Pavilion                                       0.981   0.981
+   12  Namak - Indian Specialty Restaurant                   0.980   0.980
+   13  JW Marriott Mumbai Sahar                              0.973   0.973
+   14  Musaafer                                              0.972   0.972
+   15  Waikiki Mumbai                                        0.964   0.964
+   16  Opus                                                  0.961   0.961
+   17  Gallery cafe                                          0.958   0.958
+   18  Masque                                                0.956   0.956
+   19  Bayroute Maker Maxity, BKC                            0.949   0.949
+   20  LE BAR DIAMANTAIRE                                    0.944   0.944
+
+====================================================================================================
+DONE
+====================================================================================================

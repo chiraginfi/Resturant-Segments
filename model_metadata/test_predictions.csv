@@ -1,0 +1,128 @@
+poi_code,name,Category,predicted,correct
+0x3be7cedb77aaea29:0x77411cc8d480e12,Leena Restaurant,Mainstream,Mainstream,True
+0x3be7b0762b3c0eed:0x35ab359dcf5cd89e,Vatika Garden Restaurant & Bar,Mainstream,Mainstream,True
+0x3be7aeb8f4d608fb:0x7b49cd278f39e7a7,Farmhouse Global Cuisine Restaurant,Mainstream,Mainstream,True
+0x3be7c92e3c4b1527:0x694b7709085ad921,Sagar Restaurant And Bar,Mainstream,Mainstream,True
+0x3be7ab692bc5e96b:0x4c3263e61434233d,Sea Royal Cafe and rooms,Mainstream,Mainstream,True
+0x3be7d1c137810ea3:0x21384737f2ec91e2,The Table,Super Premium,Super Premium,True
+0x3be7cf66457e219d:0x813282bea82673b4,36 Downtown - Restobar,Mainstream,Super Premium,False
+0x3be7d1c0c646461b:0x1e163d22b32c8adb,Sea Lounge,Super Premium,Super Premium,True
+0x3be7c91da0342953:0x785236e16e55c891,La Loca Maria,Premium,Super Premium,False
+0x3be7b1adfb08e72d:0xe2c27158ffa71229,Kings Court,mainstream,Mainstream,False
+0x3be7b7a8ffdc7ea9:0x80adeef1e97cfe47,Kangan,super premium,Premium,False
+0x3be7c953675a5d2d:0x9ce57434212fc604,Kuuraku Bandra West Mumbai,premium,Super Premium,False
+0x3be7b195068c94c1:0x6b610c676c4e919,Bustle - At the rooftop,mainstream,Mainstream,False
+0x3be795ba6f9c7041:0xe637e6455e0c2dc0,Manish Garden Family Resto Bar,Mainstream,Mainstream,True
+0x3be7b0fd7e8c1e09:0x86a874fdea0ecc26,West Coast Diner,Mainstream,Mainstream,True
+0x3be7cfaa127c8f61:0x767372fa60f754b2,Maasoli Lunch Home (Shivaji Park),Mainstream,Mainstream,True
+0x3be7b11f80555555:0x1fd528dfa241dddd,Majestic NX Fine Dining,Mainstream,Mainstream,True
+0x3be7d1da67679c35:0xc44096d9101d09c8,The Clearing House,Premium,Super Premium,False
+0x3be7cf61595f9679:0x7a31e77e47452a4c,South Bombay Bar,Premium,Super Premium,False
+0x3be7ce8c74290311:0xa3efe60241d20473,The Drawing Room and The St. Regis Bar,Super Premium,Super Premium,True
+0x3be7b063b4309677:0xacab123d47e26feb,Ram Punjab Restaurant & Bar,Mainstream,Mainstream,True
+0x3be7cf323d901be5:0x4b020a7767df35d0,Portico Veg Restaurant,Mainstream,Mainstream,True
+0x3be7cf3ac99549f3:0xb757eaf23fea2b45,Toast Pasta Bar,Premium,Super Premium,False
+0x3be7cf06d05d215b:0x7c6bd19ead7cb238,"Nara Thai, Worli",Super Premium,Super Premium,True
+0x3be7bfde808e70bb:0x23de63b7fc5d4036,Four More Shots Bar and Kitchen,Mainstream,Super Premium,False
+0x3be7b1047ad08201:0x6ca9b053d9d453d1,Namaste - Pure Vegetarian Restaurant - GCC HOTEL AND CLUB,Mainstream,Mainstream,True
+0x3be7b93f85f45385:0x7a7130033aa34d63,PizzaExpress,Premium,Mainstream,False
+0x3be71f2e6a5be7c1:0xf925454b7c6221db,The Citrine Fine Dine,Mainstream,Mainstream,True
+0x3be7cf9cd097cf95:0xc361a2144a7d6c6f,Seven Kitchens,Super Premium,Super Premium,True
+0x3be7cff0fc431d11:0xf6dc93bc2d00c50b,The Palate,Mainstream,Mainstream,True
+0x3be7cedc5189de17:0x3895ff797125a0b9,Chetan Bar & Kitchen,Mainstream,Mainstream,True
+0x3be7b061cff63b9f:0xcf2beeef35be9550,Sai Aqua Family Restro Bar,Mainstream,Mainstream,True
+0x3be7cf71b5829a9b:0x653dc382ca438bb9,Ditas Mumbai,Super Premium,Super Premium,True
+0x3be7b1d14eecdd5d:0xe021364d0557c27f,KALYANI FAMILY RESTO BAR,mainstream,Mainstream,False
+0x3be7b1acf93bc28d:0xe1b4fb151842c510,Aarohi 44,mainstream,Premium,False
+0x3be7c9169bd17a43:0x94207ee260ab72dd,BORA BORA Bandra,Premium,Super Premium,False
+0x3be7b93193929809:0xe7d70864f2b98a43,Sai Palace Bar and Restaurant,Mainstream,Mainstream,True
+0x3be7c914975938ad:0x4300fc52de2ad72c,Toto's Garage,Mainstream,Super Premium,False
+0x3be7cfeb1d1bf7e9:0x56933882838b2c26,Iteeha Coffee,Mainstream,Super Premium,False
+0x3be7c96f0849c345:0x6e0276cc57b4b0ab,"one8 Commune, Juhu",Super Premium,Super Premium,True
+0x3be7b800f4feb829:0xc22a08b554d81cb,Mayouchi,Super Premium,Super Premium,True
+0x3be7c7647652f6a9:0xe7ad1a24027e15c2,Taftoon,premium,Premium,False
+0x3be7b3479e87c997:0x99224bf73730f563,The Beach house,mainstream,Premium,False
+0x3be7c91fad1909b1:0xa09a7fb6e8d381eb,Amma's Restaurant and bar,Mainstream,Mainstream,True
+0x3be7c8ec3c48b18d:0xee930c428c65dd82,JYRAN - TANDOOR DINING & LOUNGE,Premium,Super Premium,False
+0x3be7cf75b15199fb:0xfb55d7b6390d4833,British,Mainstream,Super Premium,False
+0x3be7c9182c920e5f:0xf7912509065991d0,ARMANI / CAFFĒ Mumbai,Super Premium,Super Premium,True
+0x3be7b336d0850a71:0x57193d5c1568edf4,Sea Breeze Kitchen,mainstream,Mainstream,False
+0x3be7cef0612fc9d5:0xbc8a772c00121551,Dublin,Premium,Mainstream,False
+0x3be79488bdc9c967:0xdb0905f7ff0f8590,Metro bar And Restaurant,Mainstream,Mainstream,True
+0x3be7c9167cb85df3:0x97b7b798b39b0879,Hakkasan,Super Premium,Super Premium,True
+0x3be7cee7607c27a9:0xfc044c780c3e0cbf,Hornby's Pavilion,Premium,Super Premium,False
+0x3be7b12d986fd809:0x2e0eb9d1da20c77a,MASTEE Pure Veg restaurant in Borivali,Premium,Mainstream,False
+0x3be7d162fa12ecc3:0x5d9a8f897272b060,ON THE DOCKS,Mainstream,Super Premium,False
+0x3be7cfb88df09ee1:0x11ca986d2de3e906,Sette Mara,Super Premium,Super Premium,True
+0x3be7cee7607c27a9:0x1fa1c785178fc272,Frederick's Lounge,Premium,Mainstream,False
+0x3be7b3005d6bdb01:0xdd30152500a1278f,Sao by the sea,mainstream,Mainstream,False
+0x3be7b17bb9a6da0b:0x5022919cf3f28424,Pop Tate’s Mira Road,mainstream,Mainstream,False
+0x3be7c98c8d8c3247:0x13861a5b69cc7173,Trèsind Mumbai,Super Premium,Super Premium,True
+0x3be7c9002cbf6db7:0x3b3dd015093474b4,Sixteen 33 Bandra,Premium,Super Premium,False
+0x3be7c9491b0e1125:0x2d5e2778c07ce203,Bayroute Juhu,Premium,Super Premium,False
+0x3be7c14b06247589:0x556a32f540a416cd,AB's - Absolute Barbecues,Mainstream,Mainstream,True
+0x3be7c8eeb55875b3:0xc8da7d47cb24a8c0,Botticino,premium,Premium,False
+0x3be7b1edb330bce3:0x5be6a3e3d5f8c9e,Winkingg Owl- The Lounge Bar,mainstream,Mainstream,False
+0x3be7c9702115ae93:0x358f35bea2f5b2e9,Mizu,Premium,Super Premium,False
+0x3be7b86436191899:0xaccdfc7f5b794764,Great Punjab Restaurant And Bar,Mainstream,Mainstream,True
+0x3be7b70bf0660de9:0x1e1a9adc936f79bb,Que Sera Sera Restaurant & Bar,premium,Super Premium,False
+0x3be7c7e6400000f9:0xdbd1aee164503cac,PizzaExpress,Premium,Mainstream,False
+0x3be7cef066b68ab3:0xc03d162886c27f36,Kebabs & KURRIES,Premium,Super Premium,False
+0x3be7b02b890eb763:0x1a13be1dc6b2de52,Hotel Vijay Punjab,Mainstream,Mainstream,True
+0x3be7cf0fa61f372b:0x96d5d08d7c64f7eb,Praia Bar & Kitchen,Premium,Super Premium,False
+0x3be7c9149fb7f017:0xacaac82ab61a1561,Pali Village Café,Premium,Super Premium,False
+0x3be795dc19419b8d:0xecefddfe5566ea37,Krunk,Mainstream,Mainstream,True
+0x3be7b7a8ffdc7ea9:0x745ef84d7f68a893,Prego,super premium,Super Premium,False
+0x3be7cf23d904a86f:0xab9e76632020be85,Bansuri Family Bar and Restaurant,Mainstream,Mainstream,True
+0x3be7a98b38d14977:0xf4063ad680767be3,Blu Bar,Premium,Mainstream,False
+0x3be7bf5c3341b807:0x691e302311329ba6,Bombay Velvet Lounge Bar & Cafe,Mainstream,Mainstream,True
+0x3be7ceecd4d810c3:0x4baf5e380e9ebd0b,KOKO Mumbai,Super Premium,Super Premium,True
+0x3be7cff12a2207d5:0x73b3f5df0615e537,Eight,Premium,Super Premium,False
+0x3be7b7fe83ec07d3:0xfcb77dbc23ad08fd,The Game Ranch,premium,Mainstream,False
+0x3be7c91feab7d77d:0xf1db99061108e774,Chinar Bar And Restaurant,Mainstream,Super Premium,False
+0x3be7b16b922e9ddb:0x20c152b8ad38fbd9,East Asia - Veg/Jain : Multi Cuisine,mainstream,Mainstream,False
+0x3be7c85bdab95dbb:0x3691c3dcd4c789d7,Gallops Restaurant,Super Premium,Super Premium,True
+0x3be7b12ad3f10fb9:0x1dc127e9ffc1a031,Centre Point Dhaba,Mainstream,Mainstream,True
+0x3be7b6044fd19e2f:0x93f2e8e9daf2a18f,Jamjar Diner Restaurant,premium,Super Premium,False
+0x3be7a9276a0a84c9:0x3712b2aa54e51bbf,Banarasi Junction Family Restaurant & Bar,Mainstream,Mainstream,True
+0x3be7b07a41c06e4b:0x54835817b5fb95b8,Pali Village,Mainstream,Mainstream,True
+0x3be7cf7194b6aeeb:0x5de3f65a7cf18734,Teatro Bar & Grill,Premium,Mainstream,False
+0x3be7b1f37a8be47f:0xcc77007f2ff5b001,"The Bliss Cuisine & Libations, Fine Dine",mainstream,Mainstream,False
+0x3be7ceddd7ee5a69:0x46e63d0a7e48cb35,New Modern,Mainstream,Mainstream,True
+0x3be7b619427b41f3:0x28075330c2d35dbb,Global Fusion Versova,premium,Super Premium,False
+0x3be7b0f30d1b7e41:0xf14a0d8599bb44dc,Sai Sannidhi Restaurant And Bar,Mainstream,Mainstream,True
+0x3be795b3e3f7046b:0x80371e1b6a6df5f5,Bambai Restobar- Serving Memories,Mainstream,Mainstream,True
+0x3be7c8eeb56d45e3:0xde8b96bdf6311473,Maya,Super Premium,Premium,False
+0x3be7e9a52ad2ce87:0x8ee0330b08f157fb,Eleven Eleven,Mainstream,Mainstream,True
+0x3be7cfdf880b1217:0x4a7ccd0173ace94,Asia Kitchen By Mainland China | Dadar West,Mainstream,Mainstream,True
+0x3be7d1c0d0b708f5:0x75777d4fe303ae6d,Aquarius,Super Premium,Super Premium,True
+0x3be7cf82111d807f:0x58cf5a11e8ece63b,Sun and Moon Korean Restaurant,Premium,Super Premium,False
+0x3be7d1bff217938f:0x94b35038f7c0094,"Tamarind Restaurant and Poolside, Colaba",Premium,Super Premium,False
+0x3be7c93faccf388f:0xad9d5ead1e67c1d2,China Gate Bandra West,Premium,Super Premium,False
+0x3be7b0e7157dccdf:0xbc216552c4433a5,Right Choice Bar And Restaurant,Mainstream,Mainstream,True
+0x3be7c946988782c3:0x78b104318da4b255,"Someplace Else, Mumbai",Premium,Super Premium,False
+0x3be7d108addbcf4b:0xb08293d3cc539522,"KMC Bar & Bistro, Fort",Premium,Super Premium,False
+0x3be7c91a28a837d1:0xdb5a4566c387165c,Blah!,Premium,Super Premium,False
+0x3be79332d7e684b5:0xd7c33de7b6963534,Top in Town Kitchen and Bar,Mainstream,Mainstream,True
+0x3be7c94f0d61c165:0x9312b811d94e292,Ming Yang,Super Premium,Super Premium,True
+0x3be7d1c3938df6f5:0x15709152e6985785,Copper Chimney Kalaghoda,Premium,Super Premium,False
+0x3be7ced26e4f589f:0x84e2e6d9d48e7272,Diva Maharashtracha,Mainstream,Premium,False
+0x3be7b07b5b90f2a5:0x6f42c2ea6fbb2c73,Dara's Dhaba,Mainstream,Mainstream,True
+0x3be7959726dbfd71:0x9c87c6505aac6c6d,SONALI FAMILY RESTAURANT AND BAR,Mainstream,Mainstream,True
+0x3be7cf925f99076b:0x12d3b40962d9b174,Thyme & Whisk - Best Restaurant In Worli | Pure Veg Restaurant | Fine-Dine Restaurant,Premium,Super Premium,False
+0x3be7936664ce3dc3:0x882beea7bf3c0826,Sudama,Mainstream,Mainstream,True
+0x3be7c8c2c010b011:0xf8ee113451af419a,O Pedro - BKC,Premium,Super Premium,False
+0x3be7cf7e602d5a6f:0xe3b2853991a3aa73,Permit & Co.,Premium,Super Premium,False
+0x3be7b100a30e3ba7:0x5d40649876da17,Hangout Lounge Bar & Restro,Premium,Mainstream,False
+0x3be7d1dd5f99cc61:0xc7518a2525ba82bb,Wagamama,Premium,Premium,True
+0x3be7b0f271a653bf:0x7578c161526243ab,Shree Krishna Family Restaurant (Dahisar East),Mainstream,Mainstream,True
+0x3be7b1cd17e0659d:0xa45f2521ada83a56,ATLAKE The Dining Bar,mainstream,Mainstream,False
+0x3be7cfabb5b216cb:0xf5aa0727aafd6725,Keibaa x All saints,Super Premium,Mainstream,False
+0x3be7b1fd6345453f:0x4970fa7aecd3709f,Seven Eleven Club & Hotels,mainstream,Premium,False
+0x3be7cf985866ecd1:0x4c66c9ff5e767525,Mumbai Local Bar & Kitchen,Mainstream,Mainstream,True
+0x3be7cfea0d79f7b9:0xd9e5eb00b1d11ffe,La Mar Bar and Kitchen,Premium,Super Premium,False
+0x3be7d198bc17c8bd:0x49ed8a9839b7d0aa,HYLO Kala Ghoda,Premium,Super Premium,False
+0x3be7c9450ec993cb:0x9bbabde37fb78b5c,Masala Bay,Premium,Super Premium,False
+0x3be7ced3cafcea71:0xc78f854e95a9209,Ratna Palace,Mainstream,Mainstream,True
+0x3be7c3f770876dfb:0x8fa6ab0cdab279b,PizzaExpress,Premium,Mainstream,False
+0x3be7950051a35c47:0x4da9b266def1c810,Nav Gomantak Seafood Restaurant Dombivli,Mainstream,Mainstream,True

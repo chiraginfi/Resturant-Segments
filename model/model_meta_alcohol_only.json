@@ -1,0 +1,67 @@
+{
+  "feature_names": [
+    "cost_for_two",
+    "ratings",
+    "atmosphere__feels_upscale",
+    "atmosphere__feels_romantic",
+    "atmosphere__feels_quiet",
+    "atmosphere__feels_cozy",
+    "atmosphere__feels_hip",
+    "offerings__serves_happy_hour_drinks",
+    "num_spirits_available",
+    "spirits_avg_price"
+  ],
+  "classes": [
+    "Mainstream",
+    "Premium",
+    "Super Premium"
+  ],
+  "price_cols": [
+    "beer_item_price",
+    "brandy_item_price",
+    "gin_item_price",
+    "martini_item_price",
+    "mezcal_item_price",
+    "mojito_item_price",
+    "old_fashioned_item_price",
+    "other_item_price",
+    "other_cocktails_item_price",
+    "picante_item_price",
+    "rum_item_price",
+    "spirits_item_price",
+    "tequila_item_price",
+    "vodka_item_price",
+    "whisky_item_price",
+    "wine_item_price"
+  ],
+  "bool_cols": [
+    "atmosphere__feels_upscale",
+    "atmosphere__feels_romantic",
+    "atmosphere__feels_quiet",
+    "atmosphere__feels_cozy",
+    "atmosphere__feels_hip",
+    "offerings__serves_happy_hour_drinks",
+    "parking__has_parking_valet",
+    "planning__requires_reservations"
+  ],
+  "brand_cols": [
+    "beer_brand_name",
+    "brandy_brand_name",
+    "gin_brand_name",
+    "martini_brand_name",
+    "mezcal_brand_name",
+    "mojito_brand_name",
+    "old_fashioned_brand_name",
+    "other_brand_name",
+    "other_cocktails_brand_name",
+    "picante_brand_name",
+    "rum_brand_name",
+    "spirits_brand_name",
+    "tequila_brand_name",
+    "vodka_brand_name",
+    "whisky_brand_name",
+    "wine_brand_name"
+  ],
+  "cv_accuracy_mean": 0.59,
+  "cv_f1_mean": 0.581
+}

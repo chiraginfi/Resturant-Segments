@@ -1,0 +1,23 @@
+{
+  "best_model_name": "RF (tuned)",
+  "feature_cols_path": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/feature_cols.pkl",
+  "imputer_path": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/imputer.pkl",
+  "label_encoder_path": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/label_encoder.pkl",
+  "train_split_csv": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/splits/train_split.csv",
+  "test_split_csv": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/splits/test_split.csv",
+  "correlation_csv": "/mnt/data/image_recognition/brown_forman_req/puru_output/correlation_analysis.csv",
+  "correlation_plot": "/mnt/data/image_recognition/brown_forman_req/puru_output/correlation_plot.png",
+  "distribution_csv": "/mnt/data/image_recognition/brown_forman_req/puru_output/distribution_analysis.csv",
+  "metrics_csv": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/metrics/model_metrics.csv",
+  "metrics_json": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/metrics/model_metrics.json",
+  "best_model_json": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/metrics/best_model.json",
+  "models": {
+    "gbm_tuned": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/models/gbm_tuned.joblib",
+    "rf_tuned": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/models/rf_tuned.joblib",
+    "extra_trees": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/models/extra_trees.joblib",
+    "knn_tuned": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/models/knn_tuned.joblib",
+    "semi_supervised_gbm": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/models/semi_supervised_gbm.joblib",
+    "stacking": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/models/stacking.joblib",
+    "majority_vote": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/models/majority_vote.joblib"
+  }
+}

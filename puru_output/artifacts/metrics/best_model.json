@@ -1,0 +1,16 @@
+{
+  "model": "Majority Vote",
+  "cv_acc": 0.7827380952380952,
+  "test_acc": 0.8705882352941177,
+  "accuracy": 0.8705882352941177,
+  "Mainstream_precision": 0.9024390243902439,
+  "Mainstream_recall": 0.8809523809523809,
+  "Mainstream_f1": 0.8915662650602411,
+  "Premium_precision": 0.75,
+  "Premium_recall": 0.84,
+  "Premium_f1": 0.7924528301886793,
+  "Super Premium_precision": 1.0,
+  "Super Premium_recall": 0.8888888888888888,
+  "Super Premium_f1": 0.9411764705882353,
+  "params": "{\"members\": [\"GBM\", \"RF\", \"ET\", \"KNN\", \"Semi-Supervised\", \"Stacking\"]}"
+}
