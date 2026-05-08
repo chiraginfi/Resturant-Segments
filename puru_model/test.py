@@ -52,7 +52,7 @@ model_bundle = load_model_bundle(BEST_MODEL_NAME)
 # -----------------------------------------------------------------------------
 def predict_with_model(bundle, X):
     name = bundle["model_name"]
-
+    print("Running model:", name)
     if name in ["GBM (tuned)", "RF (tuned)", "Extra Trees", "k-NN (tuned)", "Semi-Supervised"]:
         model = bundle["model"]
         preds = model.predict(X)
@@ -161,4 +161,4 @@ def run_prediction(input_path=None, output_path=None):
 # RUN
 # -----------------------------------------------------------------------------
 if __name__ == "__main__":
-    run_prediction(input_path="/mnt/data/image_recognition/brown_forman_req/puru_input/training_data.csv", output_path="/mnt/data/image_recognition/brown_forman_req/puru_output/predictions_full.csv")  # default → test split
+    run_prediction(input_path="/mnt/data/image_recognition/brown_forman_req/puru_input/training_data_bf_22.csv", output_path="/mnt/data/image_recognition/brown_forman_req/puru_output/predictions_full.csv")  # default → test split

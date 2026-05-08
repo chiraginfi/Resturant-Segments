@@ -339,12 +339,6 @@ def select_features(train_eng, feature_cols, corr_threshold=0.9):
 
 
 def build_feature_matrix(labeled: pd.DataFrame, feature_cols: list):
-    """
-    Build imputed feature matrix. Fits imputer on this data only.
-    Reuse returned imputer to transform test / unlabeled sets.
-
-    Returns (X_imp, feature_cols_cleaned, le, y, imputer).
-    """
     X            = labeled[feature_cols].astype(float)
     non_null     = X.columns[X.notna().any()].tolist()
     feature_cols = non_null
@@ -353,17 +347,22 @@ def build_feature_matrix(labeled: pd.DataFrame, feature_cols: list):
     le = LabelEncoder()
     y  = le.fit_transform(labeled["Category"])
 
-    imputer = SimpleImputer(strategy="median")
-    X_imp   = imputer.fit_transform(X)
+    # First pass: identify constant columns
+    imputer_tmp = SimpleImputer(strategy="median")
+    X_imp_tmp   = imputer_tmp.fit_transform(X)
 
-    stds      = np.std(X_imp, axis=0)
+    stds      = np.std(X_imp_tmp, axis=0)
     non_const = stds > 0
     dropped   = [feature_cols[i] for i in range(len(feature_cols)) if not non_const[i]]
     if dropped:
         print(f"  Dropped constant columns: {dropped}")
 
+    # Drop constants from feature list and refit imputer on clean columns only
     feature_cols = [feature_cols[i] for i in range(len(feature_cols)) if non_const[i]]
-    X_imp        = X_imp[:, non_const]
+    X_clean      = labeled[feature_cols].astype(float)
+
+    imputer = SimpleImputer(strategy="median")
+    X_imp   = imputer.fit_transform(X_clean)
 
     return X_imp, feature_cols, le, y, imputer
 

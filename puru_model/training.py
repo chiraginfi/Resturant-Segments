@@ -449,12 +449,17 @@ X_train, feature_cols, le, y_train, imputer = build_feature_matrix(
     train_eng, feature_cols
 )
 
-valid_test = [f for f in feature_cols if f in test_eng.columns]
-X_test = imputer.transform(test_eng[valid_test].astype(float))
-y_test = le.transform(test_corrected["Category"])
+def align_to_feature_cols(df: pd.DataFrame, cols: list) -> pd.DataFrame:
+    """Return a DataFrame with exactly `cols` columns in order.
+    Columns missing from df are filled with NaN for the imputer to handle."""
+    aligned = pd.DataFrame(index=df.index)
+    for c in cols:
+        aligned[c] = df[c] if c in df.columns else float("nan")
+    return aligned
 
-valid_unlab = [f for f in feature_cols if f in unlabeled_eng.columns]
-X_unlab = imputer.transform(unlabeled_eng[valid_unlab].astype(float))
+X_test  = imputer.transform(align_to_feature_cols(test_eng,      feature_cols).astype(float))
+y_test  = le.transform(test_corrected["Category"])
+X_unlab = imputer.transform(align_to_feature_cols(unlabeled_eng, feature_cols).astype(float))
 
 joblib.dump(feature_cols, FEATURE_COLS_PKL)
 joblib.dump(imputer, IMPUTER_PKL)

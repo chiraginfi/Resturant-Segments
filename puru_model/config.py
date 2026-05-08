@@ -16,7 +16,7 @@ from pathlib import Path
 class Paths:
     # ── Input ──────────────────────────────────────────────────────────────
     INPUT_CSV = Path(
-        "/mnt/data/image_recognition/brown_forman_req/puru_input/training_data.csv"
+        "/mnt/data/image_recognition/brown_forman_req/puru_input/training_data_bf_22.csv"
     )
 
     # ── Output directory ───────────────────────────────────────────────────
