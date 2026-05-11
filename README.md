@@ -345,3 +345,62 @@ cp /mnt/data/image_recognition/restaurant_menu/brownforman_gemini_production_res
 ## Requirements
 
 Scripts use **pandas** (and **numpy** where noted). Ensure those packages are installed in your environment before running.
+
+---
+
+## Restaurant segment classifier — training (`puru_model/training.py`)
+
+This script trains sklearn models that predict restaurant **Category** (`Mainstream`, `Premium`, `Super Premium`) from engineered POI features. It is separate from the `new_steps/` CSV pipeline; it reads a labeled training CSV and writes all artifacts under the output directory configured in `puru_model/config.py`.
+
+### Prerequisites
+
+- **Input CSV:** `Paths.INPUT_CSV` in `puru_model/config.py` (default: `puru_input/training_data_bf_22.csv`). Rows must include a `Category` column; only values in `DataConfig.VALID_CATEGORIES` are used as labeled data.
+- **Output directory:** `Paths.OUTPUT_DIR` (default: `puru_output/`) is created if missing.
+- **Python packages:** `pandas`, `numpy`, `scipy`, `scikit-learn`, `joblib`, plus local modules `config`, `label_corrections`, `feature_engineering`.
+
+### What training does (high level)
+
+1. Loads the input CSV, drops leakage and user-rejected columns, and splits labeled rows into stratified **train** and **test** CSVs under `puru_output/artifacts/splits/`.
+2. Applies label corrections, runs **feature engineering** (same `engineer` path as inference), builds the imputed feature matrix, and saves `feature_cols.pkl`, `imputer.pkl`, and `label_encoder.pkl` under `puru_output/artifacts/`.
+3. Writes **correlation** and **distribution** analysis files (paths in `config.Paths`).
+4. Trains and cross-validates several models (tuned GBM, RF, Extra Trees, k-NN, semi-supervised GBM, stacking, majority vote), evaluates on the held-out test set, and records metrics in `artifacts/metrics/model_metrics.csv` and `model_metrics.json`.
+5. Selects the **best model by test accuracy**, saves `best_model.json`, and writes **`manifest.json`** / `manifest.pkl` listing paths to every saved model bundle and preprocessing artifacts. Model `.joblib` files live in `puru_output/artifacts/models/`.
+
+### Run training
+
+From the repo root (or any working directory where Python can resolve `puru_model` imports):
+
+```bash
+cd /mnt/data/image_recognition/brown_forman_req/puru_model
+python training.py
+```
+
+To use a different input file or output folder, edit `Paths.INPUT_CSV` and `Paths.OUTPUT_DIR` in `puru_model/config.py` before running.
+
+---
+
+## Restaurant segment classifier — prediction (`puru_model/test.py`)
+
+This script loads the **manifest** produced by training (`puru_output/artifacts/manifest.json` by default), restores the **best** model bundle and preprocessing objects, runs the same feature engineering path on new or held-out rows, and writes a CSV with `prediction` and (when available) `confidence`.
+
+### Prerequisites
+
+- Run **`training.py` first** so `manifest.json`, model bundles, and `feature_cols.pkl` / `imputer.pkl` / `label_encoder.pkl` exist under the configured `OUTPUT_DIR`.
+- **Input:** Either pass a CSV path into `run_prediction()`, or rely on the default: the script uses the manifest’s `test_split_csv` when no path is given. Input columns should be compatible with `feature_engineering.engineer()` (same schema family as training data).
+
+### API
+
+- **`run_prediction(input_path=None, output_path=None)`** (defined in `test.py`) — reads CSV, drops user-rejected columns, engineers features, aligns to saved `feature_cols`, imputes, predicts, and saves CSV. If `output_path` is omitted, writes to `Paths.OUTPUT_DIR / "predictions.csv"`.
+
+### Run prediction
+
+Edit the paths in the `if __name__ == "__main__"` block at the bottom of `test.py` to point at your input CSV and desired output path, then run:
+
+```bash
+cd /mnt/data/image_recognition/brown_forman_req/puru_model
+python test.py
+```
+
+You can also call `run_prediction(...)` from another script while the working directory and `sys.path` allow loading `test.py` as a module (the file is named `test.py`, which can clash with Python’s stdlib `test` package if imported as `import test` from some environments).
+
+Ensure `manifest.json` paths still match the machine (they are absolute paths written during training).
