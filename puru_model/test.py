@@ -39,8 +39,8 @@ def load_model_bundle(model_name):
         "Extra Trees": "extra_trees",
         "k-NN (tuned)": "knn_tuned",
         "Semi-Supervised": "semi_supervised_gbm",
-        # "Stacking": "stacking",
-        # "Majority Vote": "majority_vote",
+        "Stacking": "stacking",
+        "Majority Vote": "majority_vote",
     }
     key = mapping[model_name]
     return joblib.load(MODEL_PATHS[key])
@@ -75,7 +75,7 @@ def predict_with_model(bundle, X):
         meta_all = np.column_stack([meta, meta_votes])
 
         preds = meta_model.predict(meta_all)
-        proba = None  # optional
+        proba = meta_model.predict_proba(meta_all)
 
     elif name == "Majority Vote":
         members = bundle["members"]
@@ -142,9 +142,13 @@ def run_prediction(input_path=None, output_path=None):
 
     if proba is not None:
         df["confidence"] = proba.max(axis=1)
+        epsilon = 1e-10
+        if proba.shape[1] >= 2:
+            sorted_proba = np.sort(proba, axis=1)[:, ::-1]
+            df["recall_proxy"] = sorted_proba[:, 0] / (sorted_proba[:, 0] + sorted_proba[:, 1] + epsilon)
     else:
         df["confidence"] = None
-
+        df["recall_proxy"] = None
     # Save
     if output_path is None:
         output_path = Path(Paths.OUTPUT_DIR) / "predictions.csv"
@@ -161,4 +165,4 @@ def run_prediction(input_path=None, output_path=None):
 # RUN
 # -----------------------------------------------------------------------------
 if __name__ == "__main__":
-    run_prediction(input_path="/mnt/data/image_recognition/brown_forman_req/puru_input/training_data_bf_22.csv", output_path="/mnt/data/image_recognition/brown_forman_req/puru_output/predictions_full.csv")  # default → test split
+    run_prediction(input_path="/mnt/data/image_recognition/brown_forman_req/puru_input/training_data_bf_22_may.csv", output_path="/mnt/data/image_recognition/brown_forman_req/puru_output/predictions_full.csv")  # default → test split

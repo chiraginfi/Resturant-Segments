@@ -124,6 +124,29 @@ def apply_label_corrections(
 
     return df, correction_log
 
+def apply_no_label_corrections(
+    df: pd.DataFrame,
+    verbose: bool = True,
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    No-op version: returns dataframe unchanged.
+    """
+    
+    correction_log = pd.DataFrame(
+        columns=[
+            "index", "name", "address",
+            "original_category", "new_category",
+            "cost_for_two_both", "hotel_stars", "rule"
+        ]
+    )
+
+    if verbose:
+        print("No label corrections applied.")
+        print("\nCategory distribution:")
+        print(df["Category"].value_counts())
+
+    return df.copy(), correction_log
+
 
 # ── Standalone run — saves correction log to CSV ──────────────────────────────
 

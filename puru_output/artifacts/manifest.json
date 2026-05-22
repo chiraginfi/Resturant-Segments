@@ -1,5 +1,5 @@
 {
-  "best_model_name": "GBM (tuned)",
+  "best_model_name": "Stacking",
   "feature_cols_path": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/feature_cols.pkl",
   "imputer_path": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/imputer.pkl",
   "label_encoder_path": "/mnt/data/image_recognition/brown_forman_req/puru_output/artifacts/label_encoder.pkl",

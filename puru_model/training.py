@@ -16,7 +16,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.utils.class_weight import compute_sample_weight
 
 from config import Paths, data_cfg, split_cfg, cv_cfg, model_cfg, ss_cfg, analysis_cfg, FeatureConfig
-from label_corrections import apply_label_corrections
+from label_corrections import apply_label_corrections, apply_no_label_corrections
 from feature_engineering import (
     engineer,
     select_features,
@@ -415,8 +415,8 @@ print(f"Test  dist: {dict(test_raw['Category'].value_counts())}")
 # -----------------------------------------------------------------------------
 # 3) Label corrections
 # -----------------------------------------------------------------------------
-train_corrected, correction_log = apply_label_corrections(train_raw, verbose=True)
-test_corrected, _ = apply_label_corrections(test_raw, verbose=False)
+train_corrected, correction_log = apply_no_label_corrections(train_raw, verbose=True)
+test_corrected, _ = apply_no_label_corrections(test_raw, verbose=False)
 
 correction_log.to_csv(str(Paths.correction_log_csv()), index=False)
 

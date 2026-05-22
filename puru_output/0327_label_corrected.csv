@@ -1,6 +1,1 @@
 index,name,address,original_category,new_category,cost_for_two_both,hotel_stars,rule
-2560,antiSOCIAL,"Plot 242, antiSOCIAL, Mathuradas Mill Compound, Sitaram Jadhav Marg, Lower Parel, Mumbai, Maharashtra 400013, India",Mainstream,Premium,5000.0,0.0,Fix2: premium area & cost >= 4000
-1104,Cafe Holiday Versova,"Cafe Holiday Versova, Social, Meera Apts, 7/11, Juhu Versova Link Rd, opp. Versova, Gharkul Society, Seven Bunglow, Andheri West, Mumbai, Maharashtra 400061, India",Mainstream,Premium,4963.16,0.0,Fix2: premium area & cost >= 4000
-1452,True Tramm Trunk BKC,"G2-B, Ground Floor, True Tramm Trunk BKC, Trade Centre Bkc, opposite MTNL, G Block, MMRDA Area, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400098, India",Mainstream,Premium,7129.09,0.0,Fix2: premium area & cost >= 4000
-1923,JYRAN - TANDOOR DINING & LOUNGE,"JYRAN - TANDOOR DINING & LOUNGE, C 57, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400098, India",Premium,Super Premium,13000.0,5.0,Fix3: 5-star hotel & cost >= 5000
-353,Fiona,"4V6H+4F3 Fiona, Marol Naka, Radisson Blu Mumbai International Airport, Marol Maroshi Rd, near Marol, Andheri East, Mumbai, Maharashtra 400059, India",Premium,Super Premium,6500.0,5.0,Fix3: 5-star hotel & cost >= 5000
