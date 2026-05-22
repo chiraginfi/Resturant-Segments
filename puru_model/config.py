@@ -71,7 +71,7 @@ class DataConfig:
 # ══════════════════════════════════════════════════════════════════════════════
 
 class SplitConfig:
-    TEST_SIZE    = 0.20   # fraction of labeled data held out as blind test
+    TEST_SIZE    = 0.30   # fraction of labeled data held out as blind test
     RANDOM_STATE = 42
 
 
